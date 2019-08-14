@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<!-- Config file -->
+
+<config>
+    <modules>
+        <Thylak_Magemicrosoft>
+            <version>0.1.0</version>
+        </Thylak_Magemicrosoft>
+    </modules>
+    <admin>
+        <routers>
+			<magemicrosoft>
+				<use>admin</use>
+				<args>
+					<module>Thylak_Magemicrosoft</module>
+					<frontName>magemicrosoft</frontName>
+				</args>
+			</magemicrosoft>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<magemicrosoft module="magemicrosoft">
+				<title>Microsoft Dynamic CRM</title>
+				<sort_order>71</sort_order>               
+				<children>
+                    <items module="magemicrosoft">
+                        <title>Magento to Microsoft Dynamic CRM</title>
+                        <action>magemicrosoft/adminhtml_magemicrosoft/index</action>
+                        <sort_order>20</sort_order>
+                    </items>                    
+				</children>
+			</magemicrosoft>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Thylak_Magemicrosoft>
+							<title>Magemicrosoft Module</title>
+							<sort_order>10</sort_order>
+						</Thylak_Magemicrosoft>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<magemicrosoft>
+					<file>magemicrosoft.xml</file>
+				</magemicrosoft>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <resources>
+            <magemicrosoft_setup>
+                <setup>
+                    <module>Thylak_Magemicrosoft</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </magemicrosoft_setup>
+            <magemicrosoft_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </magemicrosoft_write>
+            <magemicrosoft_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </magemicrosoft_read>
+        </resources>
+        <models>
+            <magemicrosoft>
+                <class>Thylak_Magemicrosoft_Model</class>
+            </magemicrosoft>
+        </models>        
+        <blocks>
+            <magemicrosoft>
+                <class>Thylak_Magemicrosoft_Block</class>
+            </magemicrosoft>
+        </blocks>
+        <helpers>
+            <magemicrosoft>
+                <class>Thylak_Magemicrosoft_Helper</class>
+            </magemicrosoft>
+        </helpers>
+    </global>
+</config>

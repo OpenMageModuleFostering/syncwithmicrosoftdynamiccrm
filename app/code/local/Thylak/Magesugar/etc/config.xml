@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<!-- Config file -->
+
+<config>
+    <modules>
+        <Thylak_Magesugar>
+            <version>0.1.0</version>
+        </Thylak_Magesugar>
+    </modules>
+    <admin>
+        <routers>
+			<magesugar>
+				<use>admin</use>
+				<args>
+					<module>Thylak_Magesugar</module>
+					<frontName>magesugar</frontName>
+				</args>
+			</magesugar>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<magesugar module="magesugar">
+				<title>Sugar CRM</title>
+				<sort_order>71</sort_order>               
+				<children>
+                    <items module="magesugar">
+                        <title>Magento to Sugar CRM</title>
+                        <action>magesugar/adminhtml_magesugar/index</action>
+                        <sort_order>20</sort_order>
+                    </items>                    
+				</children>
+			</magesugar>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Thylak_Magesugar>
+							<title>Magesugar Module</title>
+							<sort_order>10</sort_order>
+						</Thylak_Magesugar>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<magesugar>
+					<file>magesugar.xml</file>
+				</magesugar>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <resources>
+            <magesugar_setup>
+                <setup>
+                    <module>Thylak_Magesugar</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </magesugar_setup>
+            <magesugar_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </magesugar_write>
+            <magesugar_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </magesugar_read>
+        </resources>
+        <models>
+            <magesugar>
+                <class>Thylak_Magesugar_Model</class>
+            </magesugar>
+        </models>        
+        <blocks>
+            <magesugar>
+                <class>Thylak_Magesugar_Block</class>
+            </magesugar>
+        </blocks>
+        <helpers>
+            <magesugar>
+                <class>Thylak_Magesugar_Helper</class>
+            </magesugar>
+        </helpers>
+    </global>
+</config>

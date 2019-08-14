@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!-- This layout file is used to route the controller and actions -->
+
+<layout version="0.1.0">
+    <magemicrosoft_adminhtml_magemicrosoft_index>
+        <reference name="content">
+            <block type="magemicrosoft/adminhtml_magemicrosoft" name="magemicrosoft" />
+        </reference>
+    </magemicrosoft_adminhtml_magemicrosoft_index>
+    <magemicrosoft_adminhtml_magemicrosoft_thanks>
+        <reference name="content">
+            <block type="magemicrosoft/adminhtml_magemicrosoft" name="magemicrosoft_thanks" />
+        </reference>
+    </magemicrosoft_adminhtml_magemicrosoft_thanks>    
+</layout>
