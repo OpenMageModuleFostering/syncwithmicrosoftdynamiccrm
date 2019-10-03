@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 This extension would post real time leads from magento to microsoftdynamiccrm automatically. This extension also has the capability to transfer abandoned shopping carts from Magento to microsoftdynamiccrm as opportunities which would allow your sales team to track the opportunity and convert to a sale. We also have a feature where once an opportunity is converted to a sale in microsoftdynamiccrm, it can create an order in magento. Please contact us at 302-355-0449 for further details or email me directly at _mailto:info@thylaksoft.com and _mailto:buyan@talktoaprogrammer.com for further information.
